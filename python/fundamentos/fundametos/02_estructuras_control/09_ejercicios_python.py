@@ -53,14 +53,16 @@ Pide un número al usuario e indica si es: Positivo-Par, Positivo-Impar,
 Negativo-Par, Negativo-Impar o Cero."""
 def clasificadorNum():
     n = int(input("Ingrese un número: "))
-    if n > 0 and n % 2 == 0:
-        print(f"El n° ingresado {n} es Positivo-Par")
-    elif n > 0 and n % 2 != 0:
-        print(f"El n° ingresado {n} es Positivo-Impar")
-    elif n < 0 and n % 2 == 0:
-        print(f"El n° ingresado {n} es Negativo-Par")
-    elif n < 0 and n % 2 != 0:
-        print(f"El n° ingresado {n} es Negativo-Impar")
+    if n > 0:
+        if n % 2 == 0:
+            print(f"El n° ingresado {n} es Positivo-Par")
+        else:
+            print(f"El n° ingresado {n} es Positivo-Impar")
+    elif n < 0:
+        if n % 2 == 0:
+            print(f"El n° ingresado {n} es Negativo-Par")
+        else: 
+            print(f"El n° ingresado {n} es Negativo-Impar")
     elif n == "":
         print("Error")
 
@@ -69,7 +71,7 @@ def clasificadorNum():
 # II. Iteraciones y Bucles (Intermedio)
 
 """ 5. Tabla de Multiplicar Personalizada
-Solicita un número entero y muestra su tabla de multiplicar del 1 al 12, 
+Solicita un número entero y muestra su tablffa de multiplicar del 1 al 12, 
 pero solo muestra los resultados que sean múltiplos de 3.
 """
 def tablaMultiplicar():
@@ -85,24 +87,37 @@ Crea un programa que pida números continuamente y los sume.
 El ciclo debe terminar cuando el usuario ingrese un número negativo. 
 Al final, muestra la suma total (sin incluir el negativo).
 """
-
-
+def sumaCentinela():
+    suma_total = 0
+    while True:
+        num = (int(input("Ingrese un número: ")))
+        if num < 0:
+            break
+    suma_total += num
+    print(f"Suma total: {suma_total}")
 
 """7. Contador de Vocales
 Pide al usuario una frase o palabra. Utiliza un bucle para recorrer 
 la cadena y contar cuántas vocales tiene en total.
 """
 def contadorVocales():
-    word = input("Ingrese una palabra/frase: ")
-    for i in word:
+    texto = input("Ingresa una palabra o frase: ").lower()
+    vocales = 0
+    for i in range(len(texto)):
+        if texto[i] == "a" or texto[1] == "e" or texto[1] == "i" or texto[1] == "o" or texto[1] == "u":
+            vocales += i
+        elif texto[i] == "á" or texto[i] == "é" or texto[i] == "í" or texto[i] == "ó" or texto[i] == "ú":
+            vocales += i
+    print(f"La cadena `{texto}` tiene : `{vocales}` en total")
         
-
-
 
 """8. Validación de Contraseña
 Define una contraseña en una variable. Pide al usuario que la intente adivinar. 
 Tienes un máximo de 3 intentos; si falla los 3, bloquea el acceso.
 """
+def validarContraseña():
+    contrasena = "1234"
+    
 
 # III. Manejo de Arreglos / Listas (Avanzado)
 
@@ -166,22 +181,25 @@ while continuar:
     opcion = input("\n---Elije una opción: (1-15) (0 para salir)")
     if opcion == "1":
         print("\nEjecutar ejercicio 1: ")
-        print(numerosDinamicos())
+        numerosDinamicos()
     elif opcion == "2":
         print("\nEjecutar ejercicio 2: ")
-        print(verificarEdad())
+        verificarEdad()
     elif opcion == "3":
         print("\nEjecutar ejercicio 3: ")
-        print(descuento())
+        descuento()
     elif opcion == "4":
         print("\nEjecutar ejercicio 4: ")
-        print(clasificadorNum())
+        clasificadorNum()
     elif opcion == "5":
         print("\nEjecutar ejercicio 5: ")
-        print(tablaMultiplicar())
+        tablaMultiplicar()
     elif opcion == "6":
         print("\nEjecutar ejercicio 6: ")
-        print(sumatoria())
+        sumaCentinela()
+    elif opcion == "7":
+        print("\nEjecutar ejercicio 7: ")
+        contadorVocales()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
