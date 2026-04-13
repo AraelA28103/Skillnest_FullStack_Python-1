@@ -115,9 +115,18 @@ def contadorVocales():
 Define una contraseña en una variable. Pide al usuario que la intente adivinar. 
 Tienes un máximo de 3 intentos; si falla los 3, bloquea el acceso.
 """
-def validarContraseña():
-    contrasena = "1234"
-    
+def validadorPassword():
+    password = "a1b2c3"
+    intentos = 3
+    for i in range(intentos):
+        passIngresada = input("Ingresa la contraseña: ")
+        if passIngresada == password:
+            print(f"Contraseña correcta, {intentos}/3 restantes")
+            break
+        else:
+            intentos -= 1
+            print(f"Contraseña incorrecta, {intentos}/3 restantes")
+
 
 # III. Manejo de Arreglos / Listas (Avanzado)
 
@@ -125,20 +134,65 @@ def validarContraseña():
 Crea un arreglo vacío. Pide al usuario que ingrese 5 nombres. 
 Guárdalos en el arreglo y, al final, imprímelos en orden inverso al que fueron ingresados.
 """
+def registroNombre():
+    nombres = []
+    maxi = 0
+    while maxi < 5:
+        inp = input(f"Por favor ingresar nombre {maxi + 1}")
+        if inp != "":
+            nombres.append(inp)
+        else:
+            print("Tienes que ingresar un nombre.")
+    print(nombres[1])
+    
 
 """10. Promedio de Notas
 Solicita al usuario cuántas notas desea ingresar. 
 Almacena cada nota en un arreglo. Al finalizar, calcula y muestra el promedio, la nota más alta y la más baja.
 """
+def promedioNotas():
+    cantidad = int(input("Cuantas notas desea ingresar: "))
+    notas = []
+    for i in range(cantidad):
+        nota = float(input(f"Nota {i+1}: "))
+        notas.append(nota)
+
+    promedio = sum(notas) / len(notas)
+    print(f"promedio: {promedio}")
+    print(f"Nota mas alta: {max(notas)}")
+    print(f"Nota mas baja: {min(notas)}")
+
 
 """11. Filtro de Arreglos
 Dado un arreglo de números generado por el usuario, crea un nuevo arreglo que contenga 
 solo los números que sean mayores a 50. Muestra ambos arreglos.
 """
+def filtroArreglos():
+    cantidad = int(input("¿Cuantos n° desea ingresar: "))
+    mayor50 = []
+    nUser = []
+    for i in range(i, cantidad + 1):
+        arrayUsuario = int(input("Ingrese un n°: "))
+        if arrayUsuario > 50:
+            mayor50.append(arrayUsuario)
+        else:
+            nUser.append(arrayUsuario)
+    print(f"Valores ingresados por el usuario: {nUser} \nValores mayor a 50: {mayor50}")
+
+
 
 """12. Buscador de Elementos
 Crea una lista de 10 ciudades. Pide al usuario que ingrese el nombre de una ciudad y 
 el programa debe decir si la ciudad se encuentra en la lista y en qué índice (posición) está."""
+def buscadorElemento():
+    ciudades = ["Miami", "Lima", "Tokio", "París", "Nueva York", "Roma", "Buenos Aires", "Estambul", "Kioto", "Londres"]
+    ciudad = input("Ingresar ciudad (con mayus al principio): ").capitalize()
+    esta = ciudades.index(ciudad)
+    if esta < int(ciudades):
+        print(f"Tu ciudad esta en el arreglo, en la posicion {esta}")
+    else:
+        print("Tu ciudad no esta en el arreglo.")
+
 
 # IV. Retos de Lógica Combinada
 
@@ -148,6 +202,11 @@ Crea dos arreglos: uno para nombres_productos y otro para precios.
 Permite al usuario ingresar 3 productos con sus precios. Luego, 
 muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor].
 """
+def inventario():
+    nombres_productos = []
+    precioProduc = []
+    
+    
 
 """14. Generador de Lista de Compras
 Usa un bucle while para que el usuario agregue artículos a una lista de compras. 
@@ -200,6 +259,21 @@ while continuar:
     elif opcion == "7":
         print("\nEjecutar ejercicio 7: ")
         contadorVocales()
+    elif opcion == "8":
+        print("\nEjecutar ejercicio 8: ")
+        validadorPassword()
+    elif opcion == "9":
+        print("\nEjecutar ejercicio 9: ")
+        registroNombre()
+    elif opcion == "10":
+        print("\nEjecutar ejercicio 10: ")
+        promedioNotas()
+    elif opcion == "11":
+        print("\nEjecutar ejercicio 11: ")
+        filtroArreglos()
+    elif opcion == "12":
+        print("\nEjecutar ejercicio 12: ")
+        buscadorElemento()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
