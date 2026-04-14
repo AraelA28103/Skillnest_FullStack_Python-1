@@ -204,21 +204,47 @@ muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor].
 """
 def inventario():
     nombres_productos = []
-    precioProduc = []
+    precios = []
     
-    
+    for i in range(3):
+        nombre = input("Nombre del producto: ")
+        precio = float(input("Precio: "))
+        nombres_productos.append(nombre)
+        precios.append(precio) 
+    print("\nInventario: ")
+    for i in range(3):
+        print(f"Producto: {nombres_productos[i]} - Precio {precios[i]}")
+
 
 """14. Generador de Lista de Compras
 Usa un bucle while para que el usuario agregue artículos a una lista de compras. 
 El proceso termina cuando el usuario escribe "terminar". Al final, muestra la lista ordenada alfabéticamente.
 """
-
+def listaCompras():
+    lista = []
+    while True:
+        item = input("Articulo (o 'terminar': )")
+        if item.lower() == "terminar":
+            break
+        lista.append(item)
+    print(f"Ordenada: {sorted(lista)}")
 """15. Análisis de Temperaturas
 Solicita las temperaturas de los 7 días de la semana y guárdalas en un arreglo. Muestra:
 El promedio semanal.
 Cuántos días la temperatura fue superior a 25 grados.
 El día con la temperatura más baja (asumiendo que el índice 0 es Lunes).
 """
+def analisisTemperatura():
+    dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+    temperaturas = []
+    for dia in dias:
+        temp = float(input(f"Temperatura del dia: {temperaturas}"))
+        temperaturas.append(temp)
+    
+    promedio = 
+
+
+
 continuar = True
 while continuar:
     print("\n---Ejercicios Python---")
@@ -274,6 +300,15 @@ while continuar:
     elif opcion == "12":
         print("\nEjecutar ejercicio 12: ")
         buscadorElemento()
+    elif opcion == "13":
+        print("\nEjecutar ejercicio 13: ")
+        inventario()
+    elif opcion == "14":
+        print("\nEjecutar ejercicio 14: ")
+        listaCompras()
+    elif opcion == "14":
+        print("\nEjecutar ejercicio 14: ")
+        listaCompras()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
