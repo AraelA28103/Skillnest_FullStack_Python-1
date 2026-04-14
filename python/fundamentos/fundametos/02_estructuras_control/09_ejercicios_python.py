@@ -241,7 +241,19 @@ def analisisTemperatura():
         temp = float(input(f"Temperatura del dia: {temperaturas}"))
         temperaturas.append(temp)
     
-    promedio = 
+    promedio = sum(temperaturas) / len(temperaturas)
+    mayores_25 = len([t for t in temperaturas if t > 25])
+    min_temp = min(temperaturas)
+    dia_min = dias(temperaturas.index(min_temp))
+    
+    print(f"Promedio semanal: {promedio}")
+    print(f"Día sobre 25°C: {mayores_25}")
+    print(f"Día más frío: {dia_min} {min_temp}°C")
+    
+
+
+
+
 
 
 
@@ -309,6 +321,9 @@ while continuar:
     elif opcion == "14":
         print("\nEjecutar ejercicio 14: ")
         listaCompras()
+    elif opcion == "15":
+        print("\nEjecutar ejercicio 15: ")
+        analisisTemperatura()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
