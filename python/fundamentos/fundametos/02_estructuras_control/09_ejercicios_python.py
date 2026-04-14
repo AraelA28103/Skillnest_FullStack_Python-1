@@ -233,21 +233,25 @@ El promedio semanal.
 Cuántos días la temperatura fue superior a 25 grados.
 El día con la temperatura más baja (asumiendo que el índice 0 es Lunes).
 """
-def analisisTemperatura():
-    dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
-    temperaturas = []
-    for dia in dias:
-        temp = float(input(f"Temperatura del dia: {temperaturas}"))
-        temperaturas.append(temp)
-    
-    promedio = sum(temperaturas) / len(temperaturas)
-    mayores_25 = len([t for t in temperaturas if t > 25])
-    min_temp = min(temperaturas)
-    dia_min = dias(temperaturas.index(min_temp))
-    
-    print(f"Promedio semanal: {promedio}")
-    print(f"Día sobre 25°C: {mayores_25}")
-    print(f"Día más frío: {dia_min} {min_temp}°C")
+def analisisTemp():
+    diasSemana = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
+    tempDias = []
+    tempMayor25 = 0
+    sumaTemps = 0
+    for i in range(len(diasSemana)):
+        temperatura = int(input(f"Ingresa la temperatura del día {diasSemana[i]}: "))
+        tempDias.append(temperatura)
+        sumaTemps += temperatura
+        if temperatura > 25:
+            tempMayor25 += 1
+        sumaTemps += temperatura
+    promedio = sumaTemps / len(diasSemana)
+    minTemp = min(tempDias)
+    minTempIndex = tempDias.index(minTemp)
+    minTempDia = diasSemana[minTempIndex]
+    print(f"Promedio semanal: {promedio}°")
+    print(f"Cantidad de días con temperatura sobre 25°: {tempMayor25}")
+    print(f"Día con la temperatura mas baja: {minTempDia}, con {minTemp}°")
 
 
 
@@ -320,7 +324,7 @@ while continuar:
         listaCompras()
     elif opcion == "15":
         print("\nEjecutar ejercicio 15: ")
-        analisisTemperatura()
+        analisisTemp()
     elif opcion == "0":
         print("Saliendo...")
         continuar = False
