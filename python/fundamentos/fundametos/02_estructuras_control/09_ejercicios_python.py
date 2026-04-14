@@ -248,8 +248,6 @@ def analisisTemperatura():
     print(f"Promedio semanal: {promedio}")
     print(f"Día sobre 25°C: {mayores_25}")
     print(f"Día más frío: {dia_min} {min_temp}°C")
-    
-
 
 
 
