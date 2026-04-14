@@ -202,18 +202,17 @@ Crea dos arreglos: uno para nombres_productos y otro para precios.
 Permite al usuario ingresar 3 productos con sus precios. Luego, 
 muestra una lista formateada: Producto: [Nombre] - Precio: $[Valor].
 """
-def inventario():
-    nombres_productos = []
-    precios = []
-    
+def simuladorInv():
+    nombreProductos = []
+    precioProductos = []
     for i in range(3):
         nombre = input("Nombre del producto: ")
         precio = float(input("Precio: "))
-        nombres_productos.append(nombre)
-        precios.append(precio) 
+        nombreProductos.append(nombre)
+        precioProductos.append(precio)
     print("\nInventario: ")
     for i in range(3):
-        print(f"Producto: {nombres_productos[i]} - Precio {precios[i]}")
+        print(f"Producto: {nombreProductos[i]}, precio ${precioProductos[i]}")
 
 
 """14. Generador de Lista de Compras
@@ -314,7 +313,7 @@ while continuar:
         buscadorElemento()
     elif opcion == "13":
         print("\nEjecutar ejercicio 13: ")
-        inventario()
+        simuladorInv()
     elif opcion == "14":
         print("\nEjecutar ejercicio 14: ")
         listaCompras()
