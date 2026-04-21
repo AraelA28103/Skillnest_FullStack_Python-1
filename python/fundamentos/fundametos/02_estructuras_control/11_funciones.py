@@ -38,5 +38,8 @@ print(frase) #Imprime: Buenos días Python
 def construirFrase(frase, palabra):
     return f"{frase} {palabra}"
 
-frase = input
-print(frase)
+def recibirFrase():
+   frase = input("Ingrese una frase: ")
+   palabra = input("Ingrese una palabra: ")
+   resultadoFrase = construirFrase(frase, palabra)
+   print(resultadoFrase)
