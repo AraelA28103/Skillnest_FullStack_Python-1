@@ -109,7 +109,6 @@ print(conteo_reproducciones_video())
 # a         | 560000
 
 # salida: 46 21
-# 
 
 
 
@@ -165,6 +164,7 @@ def mostrar_horas_local():
 print(horas_de_juego)
 mostrar_horas_local()
 print(horas_de_juego)
+#variable | valores
 
 
 # 13. Ahora reasignamos la variable global con el valor que retorna la función.
