@@ -15,17 +15,23 @@ print(result1)
 
 # ejercicio 2
 # Analiza publicaciones
-def suma_y_resta():
-    pass
-suma_y_resta([120, 115])
-# Imprime: 235 y retorna: 5
+def suma_y_resta(lista):
+    suma = lista[0] + lista[1]
+    resta = lista[0] - lista[1]
+    print(suma)
+    return resta
 
+resultado2 = suma_y_resta([120, 115]) 
+# Imprime: 235, Retorna: 5
 
 # ejercicio 3
 # Puntaje ajustado
-def sumatoria_menos_longitud():
-    pass
-sumatoria_menos_longitud([10, 5, 3, 7])
+def sumatoria_menos_longitud(lista):
+    total = sum(lista)
+    longitud = len(lista)
+    return total - longitud
+
+resultado3 = sumatoria_menos_longitud([10, 5, 3, 7])
 # Suma total = 25, longitud = 4, debe retornar: 21
 
 
