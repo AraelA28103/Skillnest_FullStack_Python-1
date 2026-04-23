@@ -46,31 +46,27 @@ def ejercicio3():
 
 # Suma total = 25, longitud = 4, debe retornar: 21
 
-
-# ejercicio 4
+# Ejercicio 4
 # Ajusta visualizaciones
-def valores_multiplicados_segundo():
-    pass
-
-
-valores_multiplicados_segundo([100, 3, 50, 20])
+def valores_multiplicados_segundo(c):
+    valores = []
+    print(len(c))
+    for i in range(len(c)):
+        valores.append(c[i] * (len(c) - 1))
+    return valores
 # Imprime: 4 y retorna: [300, 9, 150, 60]
-valores_multiplicados_segundo([100])
 # Imprime: 1 y retorna: []
 
 
-# ejercicio 5
+# Ejercicio 5
 # Genera precio fijo
-def valor_multiplicado_longitud():
-    pass
-valor_multiplicado_longitud(5,2)
+def valor_multiplicado_longitud(d, e):
+    valor = []
+    for i in range(e) :
+        valor.append(d*e)
+    return valor
 # Debe retornar: [10, 10]
-
-def valor_multiplicado_longitud():
-    pass
-valor_multiplicado_longitud(7, 5)
 # Debe retornar: [35, 35, 35, 35, 35]
-
 
 def limpiar_consola():
     os.system('cls')
