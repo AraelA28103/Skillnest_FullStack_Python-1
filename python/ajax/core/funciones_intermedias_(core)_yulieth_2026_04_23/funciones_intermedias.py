@@ -12,18 +12,35 @@ streamers = [
 streamers[0]["nombre"] = "Ibai"
 print(streamers)
 
-# Eventos en distintas ciudades del mundo
+
+#Eventos en distintas ciudades del mundo
 eventos = {
    "Estados Unidos": ["Los Ángeles", "Nueva York", "Las Vegas"],
    "España": ["Madrid", "Barcelona", "Valencia"]
 }
-eventos["Estados Unidos"][2] = "San Francisco"
+eventos ["Estados Unidos"][2] ="San Francisco"
+print(eventos["Estados Unidos"])
 
-# Coordenadas de la sede de un torneo internacional
+#Coordenadas de la sede de un torneo internacional
 ubicacion = [
    {"latitud": 34.052235, "longitud": -118.243683}
 ]
-ubicacion["0"]["latitud"]
+ubicacion[0]["latitud"] = 40.712776
+print(ubicacion)
+
+#Funciones para recorrer y representar datos
+def iterar_diccionario(lista):
+   for streamer in streamers:
+      print(f"nombre - {streamer["nombre"]}, seguidores - {streamer["seguidores"]}")
+iterar_diccionario(streamers)
+
+def obtener_valores(clave, lista):
+   for i in range(len(lista)):
+      if lista[i] in lista:
+         print(lista[i][clave]) 
+obtener_valores("nombre", streamers)
+obtener_valores("seguidores", streamers)
+
 categorias = {
    "juegos_populares": [
       "Fortnite", 
@@ -38,4 +55,9 @@ categorias = {
    ]
 }
 
+def mostrar_informacion(diccionario):
+   for categoria, items in diccionario.items():
+       print(f"{len(items)} {categoria.upper()}")
+       for item in items:
+           print(item)
 mostrar_informacion(categorias)
