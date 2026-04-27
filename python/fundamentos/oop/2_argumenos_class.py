@@ -42,4 +42,6 @@ isi = Estudiante("22796812-5", "Isidora", "Valenzuela", "Programación", "19-06-
 martin = Estudiante("22840632-5", "Martin", "Rojas", "Programación", "04-10-2008")
 ara = Estudiante("23036981-k", "Arael", "Anabalon", "Programación", "06-06-2009")
 
-print(f"{isi.nombre} {isi.apellido} ")
+print(f"{isi.nombre} {isi.apellido} estudia {isi.especialidad}")
+print(f"{martin.nombre} {martin.apellido} estudia {martin.especialidad}")
+print(f"{ara.nombre} {ara.apellido} estudia {ara.especialidad}")
