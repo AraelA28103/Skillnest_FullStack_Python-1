@@ -15,11 +15,14 @@ class UsuarioStreaming:
     def agregar_a_lista(self, titulo):
         """Agrega un contenido a la lista de reproducción del usuario."""
         self.lista_reproduccion.append(titulo)
-      
+        print(f"Titulo {titulo} agregado correctamente")
 
     def ver_contenido(self, titulo):
         """Simula que el usuario reproduce un contenido."""
-        pass
+        if titulo in self.lista_reproduccion:
+            print(f"El usuario {self.nombre} esta viendo '{titulo}'")
+        else:
+            print(f"Titulo '{titulo}' no encontrado")
 
     def cambiar_suscripcion(self, nueva_suscripcion):
         """Cambia el tipo de suscripción del usuario."""
@@ -28,9 +31,8 @@ class UsuarioStreaming:
     def mostrar_info_usuario(self):
         """Muestra la información del usuario y su lista de reproducción."""
         pass
-    
+         
 # Todos los valores que se deban registrar deben ser con input 
 #Añadir unmenu while para llamar a los metodos
-# (Menu de seleccion) 
+# (Menu de seleccion)
 
-titulo = input("Ingresa alguna cuestiion: ")
