@@ -40,8 +40,11 @@ Imprimir el nuevo limite de credito.
 2.- Crear un metodo que permita cambiar el correo de la instancia.
 mostrar el nuevo correo.
 """
-miyagi.aumentarCredito(2000)
+aumento = int(input("Ingrese el nuevo limite de credito: "))
+miyagi.aumentarCredito(aumento)
 print(f"El nuevo limite de credito es: {miyagi.limite_credito}")
 
-miyagi.cambiarCorreo("otrocorreo@gmail.com")
+
+correo = input("Ingrese un nuevo correo: ")
+miyagi.cambiarCorreo(correo)
 print(f"El nuevo correo es: {miyagi.email}")
