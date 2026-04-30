@@ -75,20 +75,52 @@ def ejercicio3():
     
 """ 4.- Crear una función que reciba una lista de notas (números decimales), 
  calcule el promedio e indique si el estudiante aprueba (promedio mayor o igual a 4.0)."""
-def listaNombre():
-    pass          
+def calcularPromedio(notas):
+    promedio = sum(notas) / len(notas)
+    print(f"Promedio general del estudiante: {promedio}")
+    return promedio
 
-def ejercicio4():
-    pass
+def aprobadoReprobado(promedio, nombre):
+    if promedio >= 4.0:
+        print(f"El estudiante {nombre} aprobó con un promedio general de {promedio}")
+    elif promedio < 4.0:
+        print(f"El estudiante {nombre} reprobó con un promedio general de {promedio}")
+    else:
+        print("Error")
+
+def recibirNotas():
+    estudiante = input("Ingrese el nombre del estudiante: ")
+    cantidad = int(input("Ingresa la cantidad de notas a ingresar: "))
+    listaNotas = []
+    for i in range(cantidad):
+        nota = float(input(f"Ingrese la nota N°{i + 1} de {estudiante}: "))
+        listaNotas.append(nota)
+    promedioFinal = calcularPromedio(listaNotas)
+    aprobadoReprobado(promedioFinal, estudiante)
 
 
 """ 5.- Crear una función que reciba una lista de precios de productos y 
  aplique un descuento del 10%, mostrando el valor original y el nuevo valor."""
 
 """ 6.- Crear una función que reciba un número entero y determine si es par o impar."""
+def numEntero(numero):
+    if numero % 2 == 0:
+        print(f"El número {numero} es par.")
+    else:
+        print(f"El número {numero} es impar.")
+
+def ejercicio6():
+    num = int(input("Ingrese un número: "))
+    numEntero(num)
 
 """ 7.- Crear una función que reciba una lista de edades y muestre cuántas 
  personas son mayores de edad (18 años o más)."""
+def listaEdad():
+    pass
+    
+
+def ejercicio7():
+    pass
 
 """ 8.- Crear una función que reciba una lista de palabras y permita buscar 
  cuántas veces aparece una palabra específica ingresada por el usuario."""
@@ -96,8 +128,16 @@ def ejercicio4():
 """ 9.- Crear una función que reciba una lista de números y genere una nueva 
  lista que contenga únicamente los números positivos."""
 
-""" 10.- Crear una función que reciba una lista de productos 
+""" 10.- Crear una función que reciba una lista de productos
  (utilizando diccionarios con nombre y stock) y muestre cuáles tienen un stock menor a 5 unidades."""
+
+
+
+
+
+
+
+
 
 def limpiar_consola():
     os.system('cls')
@@ -139,7 +179,7 @@ while continuar:
     elif opcion == "6":
         limpiar_consola()
         print("\nEjecutar ejercicio 6: ")
-        
+        ejercicio6()
     elif opcion == "7":
         limpiar_consola()
         print("\nEjecutar ejercicio 7: ")
