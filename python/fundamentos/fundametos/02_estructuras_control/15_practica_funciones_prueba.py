@@ -31,7 +31,7 @@ def ejercicio1():
         num = int(input(f"Ingresa un número entero {i} de {limit} : "))
         listadoNum.append(num)
         i += 1
-    listaNum(listaNum)
+    listaNum(listadoNum)
 
 """ 2.- Crear una función que reciba una cadena de texto y cuente cuántas vocales contiene."""
 def esVocal(letra):
@@ -53,14 +53,34 @@ def ejercicio2():
 
 """ 3.- Crear una función que reciba una lista de nombres y 
  muestre únicamente aquellos que tengan más de 5 letras."""
-def listaNombres():
-    pass
+def filtrar(lista):
+    resultado = []
+    for nombre in lista:
+        if len(nombre) > 5:
+            resultado.append(nombre)
+    return resultado
 
 def ejercicio3():
-    pass
-
+    nombres = []
+    nombresLargos = []
+    cantidad = int(input("¿Cuantos nombres quieres ingresar?: "))
+    
+    for i in range(cantidad):
+        nombre = input("Ingrese un nombre: ")
+        print(f"{nombre} agregado con exito a la lista.")
+        nombres.append(nombre)
+        
+    listaNombres = filtrar(nombres)
+    print(f"Los nombre con mas de 5 letras son:\n- {("\n-").join(nombresLargos)}")
+    
 """ 4.- Crear una función que reciba una lista de notas (números decimales), 
  calcule el promedio e indique si el estudiante aprueba (promedio mayor o igual a 4.0)."""
+def listaNombre():
+    pass          
+
+def ejercicio4():
+    pass
+
 
 """ 5.- Crear una función que reciba una lista de precios de productos y 
  aplique un descuento del 10%, mostrando el valor original y el nuevo valor."""
@@ -99,7 +119,7 @@ while continuar:
     if opcion == "1":
         limpiar_consola()
         print("\nEjecutar ejercicio 1: ")
-        
+        ejercicio1()
     elif opcion == "2":
         limpiar_consola()
         print("\nEjecutar ejercicio 2: ")
@@ -107,7 +127,7 @@ while continuar:
     elif opcion == "3":
         limpiar_consola()
         print("\nEjecutar ejercicio 3: ")
-        
+        ejercicio3()
     elif opcion == "4":
         limpiar_consola()
         print("\nEjecutar ejercicio 4: ")
@@ -142,3 +162,4 @@ while continuar:
         continuar = False
     else:
         print("Opción no válido. Intenta otra vez.")
+        
