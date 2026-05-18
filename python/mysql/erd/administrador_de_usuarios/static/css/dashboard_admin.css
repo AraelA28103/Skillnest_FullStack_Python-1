@@ -1,0 +1,101 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.screen {
+    width: 800px;
+}
+
+/* Contenedor del botón superior */
+.top-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+/* Botón "Nuevo Usuario" con sombra pesada y animación de clic */
+.btn-nuevo {
+    background-color: white;
+    border: 3px solid black;
+    padding: 6px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px black;
+    border-radius: 4px;
+    outline: none;
+    transition: transform 0.05s, box-shadow 0.05s;
+}
+
+/* Efecto visual de hundirse al hacer click físico */
+.btn-nuevo:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0px black;
+}
+
+/* Tabla con bordes gruesos */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+    font-size: 16px;
+}
+
+/* Encabezados de la tabla con fondo gris */
+th {
+    background-color: #d8d8d8;
+    border-bottom: 3px solid black;
+    border-right: 2px solid black;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: normal;
+}
+
+th:last-child {
+    border-right: none;
+}
+
+/* Filas y celdas */
+td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #ccc;
+    border-right: 2px solid black;
+    vertical-align: middle;
+}
+
+/* La última columna tiene borde izquierdo grueso según el dibujo */
+td:last-child,
+th:last-child {
+    border-left: 1px solid black;
+    border-right: none;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* Fondo alternado sutil para las filas */
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+/* Contenedor de iconos de acciones */
+.actions {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Iconos dibujados con SVG */
+.icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+}

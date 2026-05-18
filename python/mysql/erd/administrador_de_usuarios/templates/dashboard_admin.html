@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe - Tabla de Usuarios Interactiva</title>
+    <link rel="stylesheet" href="../static/css/dashboard_admin.css">
+</head>
+<body>
+
+    <div class="screen">
+        
+        <div class="top-bar">
+            <button class="btn-nuevo" onclick="agregarUsuario()">Nuevo Usuario</button>
+        </div>
+
+        <table id="tabla-usuarios">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Nombre</th>
+                    <th style="width: 50%;">E-mail</th>
+                    <th style="width: 15%;">Tipo Usuario</th>
+                    <th style="width: 15%;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Patricia</td>
+                    <td>patricia@codingdojo.com</td>
+                    <td>Admin</td>
+                    <td class="actions">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Andrea</td>
+                    <td>andrea@codingdojo.com</td>
+                    <td>Usuario</td>
+                    <td class="actions">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Katya</td>
+                    <td>katya@codingdojo.com</td>
+                    <td>Usuario</td>
+                    <td class="actions">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        function agregarUsuario() {
+            // Pedir los datos al usuario mediante ventanas emergentes limpias
+            const nombre = prompt("Introduce el Nombre:");
+            if (!nombre) return; // Si cancela, no hace nada
+
+            const email = prompt("Introduce el E-mail:");
+            if (!email) return;
+
+            const tipo = prompt("Introduce el Tipo de Usuario (Admin / Usuario):", "Usuario");
+            if (!tipo) return;
+
+            // Seleccionar el cuerpo de la tabla
+            const tbody = document.querySelector("#tabla-usuarios tbody");
+
+            // Crear la nueva fila
+            const nuevaFila = document.createElement("tr");
+
+            // Añadir el contenido exacto imitando la estructura CSS anterior
+            nuevaFila.innerHTML = `
+                <td>${nombre}</td>
+                <td>${email}</td>
+                <td>${tipo}</td>
+                <td class="actions">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </td>
+            `;
+
+            // Insertar la fila al final de la tabla
+            tbody.appendChild(nuevaFila);
+        }
+    </script>
+
+</body>
+</html>
